@@ -1,0 +1,14 @@
+diff --git a/dist/loader.js b/dist/loader.js
+index 2d3698694783523f052bd5859c4af979c95c2981..6b6e73f0e2d3a2fe7c3982270be4fca27a36b040 100644
+--- a/dist/loader.js
++++ b/dist/loader.js
+@@ -54,6 +54,9 @@ function hotLoader(content, context) {
+   })});
+       module.hot.dispose(cssReload);
+       ${accept}
++      if (module.hot.status() !== "idle") {
++        cssReload();
++      }
+     }
+   `;
+ }
