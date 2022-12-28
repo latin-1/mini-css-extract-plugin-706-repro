@@ -1,5 +1,6 @@
 # Yarn
 
 **/node_modules/
-/.yarn/
+/.yarn/*
+!/.yarn/releases/
 /.pnp.*
