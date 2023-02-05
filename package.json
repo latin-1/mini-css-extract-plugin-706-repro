@@ -7,10 +7,13 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "patch:mini-css-extract-plugin@npm:2.7.2#./patches/mini-css-extract-plugin.patch",
+    "mini-css-extract-plugin": "^2.7.2",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
+  },
+  "resolutions": {
+    "mini-css-extract-plugin": "patch:mini-css-extract-plugin@npm:2.7.2#./patches/mini-css-extract-plugin.patch"
   },
   "packageManager": "yarn@4.0.0-rc.34"
 }
