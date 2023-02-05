@@ -2326,12 +2326,12 @@ __metadata:
 
 "mini-css-extract-plugin@patch:mini-css-extract-plugin@npm:2.7.2#./patches/mini-css-extract-plugin.patch::locator=mini-css-extract-plugin-706-repro%40workspace%3A.":
   version: 2.7.2
-  resolution: "mini-css-extract-plugin@patch:mini-css-extract-plugin@npm%3A2.7.2#./patches/mini-css-extract-plugin.patch::version=2.7.2&hash=2537cb&locator=mini-css-extract-plugin-706-repro%40workspace%3A."
+  resolution: "mini-css-extract-plugin@patch:mini-css-extract-plugin@npm%3A2.7.2#./patches/mini-css-extract-plugin.patch::version=2.7.2&hash=ee669b&locator=mini-css-extract-plugin-706-repro%40workspace%3A."
   dependencies:
     schema-utils: "npm:^4.0.0"
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 17853f7c738e47cc44a691667bc428f2b3499330a852eb090f18c1679afdcf969c831d7aca653deacf0a8ca79f75cf0e8e7b42448545edb9f84be3e3ccdde76b
+  checksum: 7eca723dfd43ed8150fd620729a34fa0ebccad7b6af290d65ff5206500c81f317343562304aebb1dc0edefe866352de57d2ac0638835c08f10c77c61747ced00
   languageName: node
   linkType: hard
 

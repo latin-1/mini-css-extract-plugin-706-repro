@@ -1,5 +1,40 @@
+diff --git a/dist/hmr/hotModuleReplacement.js b/dist/hmr/hotModuleReplacement.js
+index 96339b163a363ff760378e3a46ed72aabd81293a..17b4cd7ea05c93e2c26d7b2f8e9a4cf8a554a667 100644
+--- a/dist/hmr/hotModuleReplacement.js
++++ b/dist/hmr/hotModuleReplacement.js
+@@ -204,6 +204,7 @@ function isUrlRequest(url) {
+   }
+   return true;
+ }
++var updateFunctionMap = Object.create(null);
+ 
+ /**
+  * @param {TODO} moduleId
+@@ -215,6 +216,13 @@ module.exports = function (moduleId, options) {
+     console.log("no window.document found, will not HMR CSS");
+     return noop;
+   }
++  var key = JSON.stringify({
++    moduleId: moduleId,
++    options: options
++  });
++  if (updateFunctionMap[key]) {
++    return updateFunctionMap[key];
++  }
+   var getScriptSrc = getCurrentScriptUrl(moduleId);
+   function update() {
+     var src = getScriptSrc(options.filename);
+@@ -231,5 +239,6 @@ module.exports = function (moduleId, options) {
+       reloadAll();
+     }
+   }
+-  return debounce(update, 50);
++  updateFunctionMap[key] = debounce(update, 50);
++  return updateFunctionMap[key];
+ };
+\ No newline at end of file
 diff --git a/dist/loader.js b/dist/loader.js
-index 2d3698694783523f052bd5859c4af979c95c2981..6b6e73f0e2d3a2fe7c3982270be4fca27a36b040 100644
+index 2d3698694783523f052bd5859c4af979c95c2981..fcd0350e65c8929b2f9b412b581a64bc1975f9be 100644
 --- a/dist/loader.js
 +++ b/dist/loader.js
 @@ -54,6 +54,9 @@ function hotLoader(content, context) {
